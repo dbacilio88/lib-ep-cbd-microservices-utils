@@ -1,0 +1,7 @@
+# Application configuration
+application:
+    title: archetype
+    version: 1.0.0
+
+ep-cdb-microservice-path: "/json/microservices.codes.json"
+ep-cdb-microservice-index: 01

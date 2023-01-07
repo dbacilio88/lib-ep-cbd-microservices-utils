@@ -1,0 +1,26 @@
+[
+    {
+        "code": "000",
+        "responseCode": "200.xx.000",
+        "responseMessage": "Process Ok",
+        "responseHttpCode": "200"
+    },
+    {
+        "code": "001",
+        "responseCode": "400.xx.001",
+        "responseMessage": "Header Params Required",
+        "responseHttpCode": "400"
+    },
+    {
+        "code": "002",
+        "responseCode": "400.xx.002",
+        "responseMessage": "JWE Invalid format",
+        "responseHttpCode": "400"
+    },
+    {
+        "code": "003",
+        "responseCode": "400.xx.003",
+        "responseMessage": "Params required",
+        "responseHttpCode": "400"
+    }
+]
