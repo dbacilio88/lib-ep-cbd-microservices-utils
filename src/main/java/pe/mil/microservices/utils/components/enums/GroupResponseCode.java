@@ -3,13 +3,16 @@ package pe.mil.microservices.utils.components.enums;
 import com.google.common.collect.Lists;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
+
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 @Getter
 public enum GroupResponseCode {
-    INVALID_PARAMETER_ID_NUMBER_VALUE_IS_INVALID("001", "The ID number value is invalid", Lists.newArrayList("396", "400"));
+
+    INVALID_PARAMETER_ID_NUMBER_VALUE_IS_INVALID("001", "The ID number value is invalid", Lists.newArrayList("001", "400"));
 
     GroupResponseCode(String responseCodeValue, String responseCodeMessage, List<String> responseCodeGroup) {
         this.responseCodeValue = responseCodeValue;

@@ -8,19 +8,13 @@
     {
         "code": "001",
         "responseCode": "400.xx.001",
-        "responseMessage": "Header Params Required",
+        "responseMessage": "Invalid parameters.",
         "responseHttpCode": "400"
     },
     {
         "code": "002",
         "responseCode": "400.xx.002",
-        "responseMessage": "JWE Invalid format",
-        "responseHttpCode": "400"
-    },
-    {
-        "code": "003",
-        "responseCode": "400.xx.003",
-        "responseMessage": "Params required",
+        "responseMessage": "Header Params Required.",
         "responseHttpCode": "400"
     }
 ]

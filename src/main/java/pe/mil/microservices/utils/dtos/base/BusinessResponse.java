@@ -33,15 +33,15 @@ public class BusinessResponse {
         return getResponse(BaseBusinessResponseDto.builder().build(), codeMessageResponse);
     }
 
-    public ResponseEntity<Object> getResponse(BaseBusinessResponseDto baseBacsystemResponse, @NotNull String codeMessageResponse) {
+    public ResponseEntity<Object> getResponse(BaseBusinessResponseDto baseResponse, @NotNull String codeMessageResponse) {
 
         try (Jsonb jsonb = JsonbBuilder.create()) {
             MessageResponseDto response = this.contextInformationService.findByCodeMessage(codeMessageResponse);
-            baseBacsystemResponse.dateTransaction = new Date();
-            baseBacsystemResponse.messageResponseCode = response.getResponseCode();
-            baseBacsystemResponse.messageResponse = response.getResponseMessage();
+            baseResponse.dateTransaction = new Date();
+            baseResponse.messageResponseCode = response.getResponseCode();
+            baseResponse.messageResponse = response.getResponseMessage();
             HttpStatus httpStatus = HttpStatus.valueOf(response.getResponseHttpCode());
-            String body = jsonb.toJson(baseBacsystemResponse);
+            String body = jsonb.toJson(baseResponse);
             return new ResponseEntity<>(body, httpStatus);
 
         } catch (Exception e) {
@@ -52,15 +52,15 @@ public class BusinessResponse {
 
     }
 
-    public ResponseEntity<Object> getResponse(BaseBusinessResponseDto baseBacsystemResponse, @NotNull String codeMessageResponse, HttpHeaders headers) {
+    public ResponseEntity<Object> getResponse(BaseBusinessResponseDto baseResponse, @NotNull String codeMessageResponse, HttpHeaders headers) {
 
         try (Jsonb jsonb = JsonbBuilder.create()) {
             MessageResponseDto response = this.contextInformationService.findByCodeMessage(codeMessageResponse);
-            baseBacsystemResponse.dateTransaction = new Date();
-            baseBacsystemResponse.messageResponseCode = response.getResponseCode();
-            baseBacsystemResponse.messageResponse = response.getResponseMessage();
+            baseResponse.dateTransaction = new Date();
+            baseResponse.messageResponseCode = response.getResponseCode();
+            baseResponse.messageResponse = response.getResponseMessage();
             HttpStatus httpStatus = HttpStatus.valueOf(response.getResponseHttpCode());
-            String body = jsonb.toJson(baseBacsystemResponse);
+            String body = jsonb.toJson(baseResponse);
             return new ResponseEntity<>(body, headers, httpStatus);
 
         } catch (Exception e) {
@@ -75,7 +75,7 @@ public class BusinessResponse {
         try (Jsonb jsonb = JsonbBuilder.create()) {
 
             MessageResponseDto response = this.contextInformationService.findByCodeMessage(codeMessageResponse);
-            BaseBusinessErrorResponse bacsystemErrorResponse = BaseBusinessErrorResponse.builder()
+            BaseBusinessErrorResponse errorResponse = BaseBusinessErrorResponse.builder()
                 .messageResponseCode(response.getResponseCode())
                 .messageResponse(response.getResponseMessage())
                 .dateTransaction(new Date())
@@ -109,7 +109,7 @@ public class BusinessResponse {
 
 
             HttpStatus httpStatus = HttpStatus.valueOf(response.getResponseHttpCode());
-            String body = jsonb.toJson(bacsystemErrorResponse);
+            String body = jsonb.toJson(errorResponse);
             jsonb.close();
             return new ResponseEntity<>(body, httpStatus);
 

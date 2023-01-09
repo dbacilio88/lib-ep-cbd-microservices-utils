@@ -12,7 +12,8 @@ import java.util.Map;
 public enum ResponseCode {
 
     PROCESS_OK("000"),
-    ERROR_INVALID_PARAMETERS("396");
+    ERROR_PARAMETERS_INVALID("001"),
+    ERROR_HEADERS_PARAMETER_REQUIRED("002");
 
     private final String responseCodeValue;
 

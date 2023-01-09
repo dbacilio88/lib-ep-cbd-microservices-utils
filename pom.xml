@@ -22,7 +22,7 @@
         <java.version>11</java.version>
         <maven.test.skip>false</maven.test.skip>
         <project.test.result.directory>${project.build.directory}/test-results</project.test.result.directory>
-        <dependency-javax.servlet-version>2.5</dependency-javax.servlet-version>
+
         <dependency-org.projectlombok-version>1.18.24</dependency-org.projectlombok-version>
         <dependency-org.apache.commons-version>3.12.0</dependency-org.apache.commons-version>
         <dependency-javax.json.bind-version>1.0</dependency-javax.json.bind-version>
@@ -33,6 +33,9 @@
         <dependency-org.apache.logging.log4j.core-version>2.19.0</dependency-org.apache.logging.log4j.core-version>
         <dependency-org.mock-server-version>5.14.0</dependency-org.mock-server-version>
         <dependency-org.modelmapper-version>3.1.1</dependency-org.modelmapper-version>
+        <dependency-org.eclipse-version>1.0</dependency-org.eclipse-version>
+        <dependency-org.glassfish-version>1.1</dependency-org.glassfish-version>
+
         <plugin-maven-compiler.version>3.10.1</plugin-maven-compiler.version>
         <plugin-maven-dependency.version>2.8</plugin-maven-dependency.version>
         <plugin-maven-failsafe.version>2.22.2</plugin-maven-failsafe.version>
@@ -42,7 +45,7 @@
         <plugin-maven-pmd.version>3.17.0</plugin-maven-pmd.version>
         <plugin-com.github.spotbugs.version>4.1.4</plugin-com.github.spotbugs.version>
         <plugin-org.owasp.version>7.4.2</plugin-org.owasp.version>
-        <plugin-org.owasp.skip>false</plugin-org.owasp.skip>
+        <plugin-org.owasp.skip>true</plugin-org.owasp.skip>
         <plugin-project-info-reports-version>3.4.1</plugin-project-info-reports-version>
         <minimum-coverage-jacoco.percentage>0.0</minimum-coverage-jacoco.percentage>
     </properties>
@@ -53,10 +56,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
-                <exclusion>
+               <!-- <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
+                </exclusion>-->
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter</artifactId>
@@ -78,13 +81,6 @@
                     <artifactId>spring-boot-starter</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${dependency-javax.servlet-version}</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -167,6 +163,25 @@
             <artifactId>modelmapper</artifactId>
             <version>${dependency-org.modelmapper-version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>${dependency-org.eclipse-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>${dependency-org.glassfish-version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -308,9 +323,9 @@
                             <skip>${plugin-org.owasp.skip}</skip>
                         </configuration>
 
-                        <!--<goals>
+                        <goals>
                             <goal>check</goal>
-                        </goals>-->
+                        </goals>
 
                     </execution>
 

@@ -9,7 +9,9 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextRefreshedEvent;
 import pe.mil.microservices.utils.components.properties.MicroserviceProperties;
+
 import java.util.Objects;
+
 import static pe.mil.microservices.utils.constants.BaseParametersInvalidConstants.COMPONENT_SERVER_SERVLET_CONTEXT_PATH;
 import static pe.mil.microservices.utils.constants.BaseParametersInvalidConstants.MICROSERVICES_CONTEXT_NOT_FOUND_MESSAGE;
 
@@ -26,7 +28,7 @@ public abstract class MicroserviceApplication implements ApplicationListener<Con
     }
 
     @Override
-    public void onApplicationEvent( ContextRefreshedEvent event) {
+    public void onApplicationEvent(ContextRefreshedEvent event) {
         logger.info("************************ MICROSERVICE APP ************************************");
         logger.info("Spring Version: {}", this.microserviceProperties.getApplication());
         logger.info("Name: {}", this.microserviceProperties.getName());
@@ -43,8 +45,8 @@ public abstract class MicroserviceApplication implements ApplicationListener<Con
                 && StringUtils.isNoneEmpty(this.microserviceProperties.getContextPath())
                 && !COMPONENT_SERVER_SERVLET_CONTEXT_PATH.equals(this.microserviceProperties.getContextPath())
         ) {
+            logger.info("Project: synchronous project");
             return this.microserviceProperties.getContextPath();
-
         }
 
         if (
@@ -52,6 +54,7 @@ public abstract class MicroserviceApplication implements ApplicationListener<Con
                 && StringUtils.isNoneEmpty(this.microserviceProperties.getWebFluxContextPath())
                 && !COMPONENT_SERVER_SERVLET_CONTEXT_PATH.equals(this.microserviceProperties.getWebFluxContextPath())
         ) {
+            logger.info("Project: asynchronous project");
             return this.microserviceProperties.getWebFluxContextPath();
 
         }
