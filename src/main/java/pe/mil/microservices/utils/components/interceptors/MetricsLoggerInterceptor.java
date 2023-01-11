@@ -6,7 +6,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import pe.mil.microservices.utils.components.helpers.ContextCurrentTimeHelper;
 import pe.mil.microservices.utils.constants.BaseInterceptorConstants;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +14,6 @@ public class MetricsLoggerInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-
         long start = ContextCurrentTimeHelper.getStarTime();
         logger.info("[{}]: [{}]", BaseInterceptorConstants.REQUEST_START_TIME, ContextCurrentTimeHelper.getTimestamp(start));
         request.setAttribute(BaseInterceptorConstants.REQUEST_START_TIME, start);

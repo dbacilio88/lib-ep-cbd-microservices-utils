@@ -32,6 +32,7 @@ public class DataMessageTransformJson {
     }
 
     public List<MessageResponseDto> loadDefaultMessageResponseJson() {
+
         String json = "[{\"code\":\"000\", \"responseCode\":\"200.01.000\",\"responseMessage\":\"Process Ok\", \"responseHttpCode\":\"200\"},{\"code\":\"001\",\"responseCode\":\"400.01.001\",\"responseMessage\":\"Header Params Required\",\"responseHttpCode\":\"400\"},{\"code\":\"002\",\"responseCode\":\"400.01.002\",\"responseMessage\":\"JWE Invalid format\",\"responseHttpCode\":\"400\"}]";
 
         try (Jsonb jsonb = JsonbBuilder.create()) {
@@ -44,5 +45,4 @@ public class DataMessageTransformJson {
 
         return Collections.emptyList();
     }
-
 }

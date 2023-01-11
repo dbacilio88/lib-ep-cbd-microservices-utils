@@ -3,6 +3,7 @@ package pe.mil.microservices.utils.components.helpers;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import pe.mil.microservices.utils.dtos.messages.MessageResponseDto;
+
 import java.util.List;
 
 @Service
@@ -12,7 +13,7 @@ public class ContextInformationService {
     @Value("${ep-cdb-microservice-index:01}")
     private String indexMicroservice;
 
-    public List<MessageResponseDto> getMessageResponseDtos() {
+    public List<MessageResponseDto> getMessageResponse() {
         DataMessageTransformJson helper = new DataMessageTransformJson();
         List<MessageResponseDto> responses = helper.loadMessageResponseJson(path);
         if (responses.isEmpty()) {
@@ -24,9 +25,21 @@ public class ContextInformationService {
 
     public MessageResponseDto findByCodeMessage(String codeMessageResponse) {
 
-        MessageResponseDto response = getMessageResponseDtos().stream().filter(messageResponseDto -> messageResponseDto.getCode().equals(codeMessageResponse)).findFirst().orElse(MessageResponseDto.builder().code("-1").responseCode("-1").responseMessage("code message not mapped").responseHttpCode(400)
-
-            .build());
+        MessageResponseDto response = getMessageResponse()
+            .stream()
+            .filter(
+                messageResponseDto -> messageResponseDto
+                    .getCode()
+                    .equals(codeMessageResponse))
+            .findFirst()
+            .orElse(MessageResponseDto
+                .builder()
+                .code("-1")
+                .responseCode("-1")
+                .responseMessage("code message not mapped")
+                .responseHttpCode(400)
+                .build()
+            );
 
         String cod;
 

@@ -16,5 +16,23 @@
         "responseCode": "400.xx.002",
         "responseMessage": "Header Params Required.",
         "responseHttpCode": "400"
+    },
+    {
+        "code": "020",
+        "responseCode": "400.xx.020",
+        "responseMessage": "There is no previous process in progress with the requested data",
+        "responseHttpCode": "400"
+    },
+    {
+        "code": "998",
+        "responseCode": "400.xx.376",
+        "responseMessage": "Integration error",
+        "responseHttpCode": "400"
+    },
+    {
+        "code": "999",
+        "responseCode": "500.xx.999",
+        "responseMessage": "Internal Server Error",
+        "responseHttpCode": "500"
     }
 ]

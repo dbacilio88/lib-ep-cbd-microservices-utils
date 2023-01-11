@@ -22,7 +22,7 @@ public class ObjectMapperHelper {
     }
 
     public static <D, S> List<D> mapAll(final Collection<S> source, Class<D> target) {
-        return source.stream().map(s -> map(source, target)).collect(Collectors.toList());
+        return source.stream().map(s -> map(s, target)).collect(Collectors.toList());
     }
 
     public static <S, D> D map(final S source, D target) {

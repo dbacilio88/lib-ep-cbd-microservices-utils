@@ -13,7 +13,12 @@ public enum ResponseCode {
 
     PROCESS_OK("000"),
     ERROR_PARAMETERS_INVALID("001"),
-    ERROR_HEADERS_PARAMETER_REQUIRED("002");
+    ERROR_HEADERS_PARAMETER_REQUIRED("002"),
+    ERROR_IN_REQUESTED_DATA("020"),
+
+    ERROR_INTEGRATION_ERROR("998"),
+
+    INTERNAL_SERVER_ERROR("999");
 
     private final String responseCodeValue;
 
