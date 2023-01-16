@@ -24,6 +24,12 @@
         "responseHttpCode": "400"
     },
     {
+        "code": "021",
+        "responseCode": "400.xx.021",
+        "responseMessage": "There is already a record in the database",
+        "responseHttpCode": "400"
+    },
+    {
         "code": "998",
         "responseCode": "400.xx.376",
         "responseMessage": "Integration error",
