@@ -16,11 +16,9 @@ public enum ResponseCode {
     ERROR_HEADERS_PARAMETER_REQUIRED("002"),
     ERROR_IN_REQUESTED_DATA("020"),
     ERROR_IN_REQUESTED_DATA_EXISTS("021"),
-
+    SUCCESS_IN_REQUESTED_DATA_NOT_FOUND("022"),
     ERROR_INTEGRATION_ERROR("998"),
-
     INTERNAL_SERVER_ERROR("999");
-
     private final String responseCodeValue;
 
     private static final Map<String, ResponseCode> MAP_RESPONSE_CODE = new HashMap<>();

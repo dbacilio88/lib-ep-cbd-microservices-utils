@@ -30,6 +30,12 @@
         "responseHttpCode": "400"
     },
     {
+        "code": "022",
+        "responseCode": "204.xx.022",
+        "responseMessage": "The requested resource was not found",
+        "responseHttpCode": "204"
+    },
+    {
         "code": "998",
         "responseCode": "400.xx.376",
         "responseMessage": "Integration error",
