@@ -5,5 +5,6 @@ public interface ICrudAllDomainEntity<R, L, E, I>
     IUpdateDomainEntity<R, E>,
     IDeleteDomainEntity<E>,
     IGetAllDomainEntity<L>,
-    IGetDomainEntityById<E, I> {
+    IGetDomainEntityById<E, I>,
+    IGetDomainEntityPage<R, E> {
 }
