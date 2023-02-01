@@ -36,6 +36,12 @@
         "responseHttpCode": "204"
     },
     {
+        "code": "023",
+        "responseCode": "400.xx.023",
+        "responseMessage": "Invalid data",
+        "responseHttpCode": "400"
+    },
+    {
         "code": "998",
         "responseCode": "400.xx.376",
         "responseMessage": "Integration error",

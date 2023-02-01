@@ -45,3 +45,8 @@ y este proyecto se adhiere a [Semantic Versioning] (https://semver.org/spec/v2.0
     * ***errors*** BaseErrorResponse
     * ***messages*** MessageBusinessResponse
     * ***messages*** MessageResponseDto
+  
+## [1.0.0] - 2023-02-01
+
+- **Add** Pagination
+- **Add** Web services consumption
