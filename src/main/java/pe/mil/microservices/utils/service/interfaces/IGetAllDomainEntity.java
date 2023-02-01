@@ -4,5 +4,5 @@ public interface IGetAllDomainEntity<L> {
 
     L getAll();
 
-    Iterable<L> GetAllEntities();
+    Iterable<L> getAllEntities();
 }
