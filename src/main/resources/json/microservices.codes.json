@@ -18,32 +18,38 @@
         "responseHttpCode": "400"
     },
     {
-        "code": "020",
-        "responseCode": "400.xx.020",
+        "code": "003",
+        "responseCode": "400.xx.003",
         "responseMessage": "There is no previous process in progress with the requested data",
         "responseHttpCode": "400"
     },
     {
-        "code": "021",
-        "responseCode": "400.xx.021",
+        "code": "004",
+        "responseCode": "200.xx.004",
         "responseMessage": "There is already a record in the database",
-        "responseHttpCode": "400"
+        "responseHttpCode": "200"
     },
     {
-        "code": "022",
-        "responseCode": "204.xx.022",
+        "code": "005",
+        "responseCode": "200.xx.005",
         "responseMessage": "The requested resource was not found",
-        "responseHttpCode": "204"
+        "responseHttpCode": "200"
     },
     {
-        "code": "023",
-        "responseCode": "400.xx.023",
+        "code": "006",
+        "responseCode": "400.xx.006",
         "responseMessage": "Invalid data",
         "responseHttpCode": "400"
     },
     {
-        "code": "998",
-        "responseCode": "400.xx.376",
+        "code": "007",
+        "responseCode": "500.xx.007",
+        "responseMessage": "a record could not be registered in the database",
+        "responseHttpCode": "500"
+    },
+    {
+        "code": "008",
+        "responseCode": "400.xx.008",
         "responseMessage": "Integration error",
         "responseHttpCode": "400"
     },
