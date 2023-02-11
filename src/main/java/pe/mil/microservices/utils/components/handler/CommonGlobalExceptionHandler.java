@@ -54,6 +54,11 @@ public class CommonGlobalExceptionHandler {
                                     ? microservicesErrorHandlerConfiguration.getLink()
                                     : null
                             )
+                            /**
+                             * Jdk: 8
+                             .errors(Stream.of(new BaseErrorResponse.ErrorResponse(ex.getMessage())).collect(Collectors.toList()))
+                             .errors(Arrays.asList(new BaseErrorResponse.ErrorResponse(ex.getMessage())))
+                             */
                             .errors(
                                 List
                                     .of(new BaseErrorResponse.ErrorResponse(ex.getMessage()))
@@ -79,6 +84,11 @@ public class CommonGlobalExceptionHandler {
                                     ? microservicesErrorHandlerConfiguration.getLink()
                                     : null
                             )
+                            /**
+                             * Jdk: 8
+                             .errors(Stream.of(new BaseErrorResponse.ErrorResponse(ex.getMessage())).collect(Collectors.toList()))
+                             .errors(Arrays.asList(new BaseErrorResponse.ErrorResponse(ex.getMessage())))
+                             */
                             .errors(
                                 List
                                     .of(new BaseErrorResponse.ErrorResponse(ex.getLocalizedMessage()))

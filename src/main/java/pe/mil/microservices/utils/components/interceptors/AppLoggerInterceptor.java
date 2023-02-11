@@ -26,7 +26,7 @@ public class AppLoggerInterceptor implements WebFilter {
             return chain.filter(exchange.mutate().build());
         }
 
-        final var userId = StringUtils
+        final String userId = StringUtils
             .defaultIfEmpty(
                 exchange
                     .getRequest()
@@ -35,7 +35,7 @@ public class AppLoggerInterceptor implements WebFilter {
                 ProcessConstants.PARAMETER_EMPTY_VALUE
             );
 
-        final var tenantId = StringUtils
+        final String tenantId = StringUtils
             .defaultIfEmpty(
                 exchange
                     .getRequest()
@@ -44,7 +44,7 @@ public class AppLoggerInterceptor implements WebFilter {
                 ProcessConstants.PARAMETER_EMPTY_VALUE
             );
 
-        final var requestId = StringUtils
+        final String requestId = StringUtils
             .defaultIfEmpty(
                 exchange
                     .getRequest()

@@ -2,6 +2,8 @@ package pe.mil.microservices.utils.components.helpers;
 
 import lombok.experimental.UtilityClass;
 
+import java.util.Objects;
+
 @UtilityClass
 public class NumberHelper {
 
@@ -16,6 +18,9 @@ public class NumberHelper {
     }
 
     private String onlyNumber(String value) {
+        if (Objects.isNull(value)) {
+            return "";
+        }
         String number;
         StringBuilder dni = new StringBuilder();
         for (int i = 0; i < value.length(); i++) {

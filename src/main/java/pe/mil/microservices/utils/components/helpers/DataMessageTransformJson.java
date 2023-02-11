@@ -6,6 +6,7 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pe.mil.microservices.utils.dtos.messages.MessageResponseDto;
+
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class DataMessageTransformJson {
 
     public List<MessageResponseDto> loadMessageResponseJson(String path) {
         ObjectMapper mapper = new ObjectMapper();
-        TypeReference<List<MessageResponseDto>> typeReference = new TypeReference<>() {
+        TypeReference<List<MessageResponseDto>> typeReference = new TypeReference<List<MessageResponseDto>>() {
         };
         try (InputStream stream = TypeReference.class.getResourceAsStream(path)) {
             return mapper.readValue(stream, typeReference);
