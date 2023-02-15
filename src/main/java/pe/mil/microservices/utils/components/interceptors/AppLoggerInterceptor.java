@@ -26,6 +26,10 @@ public class AppLoggerInterceptor implements WebFilter {
             return chain.filter(exchange.mutate().build());
         }
 
+        exchange.getRequest().mutate().headers(h -> {
+            log.info("AppLoggerInterceptor {} ", h);
+        });
+
         final String userId = StringUtils
             .defaultIfEmpty(
                 exchange

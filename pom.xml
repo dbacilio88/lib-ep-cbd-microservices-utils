@@ -22,7 +22,7 @@
         <java.version>11</java.version>
         <maven.test.skip>false</maven.test.skip>
         <project.test.result.directory>${project.build.directory}/test-results</project.test.result.directory>
-
+        <spring-cloud.version>2021.0.5</spring-cloud.version>
         <dependency-org.projectlombok-version>1.18.24</dependency-org.projectlombok-version>
         <dependency-org.apache.commons-version>3.12.0</dependency-org.apache.commons-version>
         <dependency-javax.json.bind-version>1.0</dependency-javax.json.bind-version>
@@ -54,6 +54,18 @@
         <plugin-project-info-reports-version>3.4.1</plugin-project-info-reports-version>
         <minimum-coverage-jacoco.percentage>0.0</minimum-coverage-jacoco.percentage>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -205,6 +217,24 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${dependency-org.apache.httpcomponents-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.playtika.reactivefeign</groupId>
+            <artifactId>feign-reactor-webclient</artifactId>
+            <version>3.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.playtika.reactivefeign</groupId>
+            <artifactId>feign-reactor-cloud</artifactId>
+            <version>3.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.playtika.reactivefeign</groupId>
+            <artifactId>feign-reactor-spring-configuration</artifactId>
+            <version>3.2.6</version>
         </dependency>
 
     </dependencies>
@@ -396,8 +426,8 @@
             <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>bacsystem-central-snapshot</id>
-            <name>bacsystem-central-snapshot</name>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
             <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
@@ -407,6 +437,11 @@
             <id>bacsystem-central</id>
             <name>bacsystem-central</name>
             <url>http://localhost:8081/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </repository>
     </repositories>
 

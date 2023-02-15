@@ -15,7 +15,6 @@ import java.nio.charset.StandardCharsets;
 
 @Log4j2
 public class MicroserviceCommonHttpResponseDecorator extends ServerHttpResponseDecorator {
-
     private final DataBufferFactory bufferFactory;
 
     public MicroserviceCommonHttpResponseDecorator(ServerHttpResponse delegate) {

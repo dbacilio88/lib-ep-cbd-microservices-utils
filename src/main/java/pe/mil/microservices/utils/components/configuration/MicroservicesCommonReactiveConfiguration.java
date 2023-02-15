@@ -10,11 +10,9 @@ import pe.mil.microservices.utils.dtos.commons.CommonApplicationInfo;
 @Configuration
 @ComponentScan
 public class MicroservicesCommonReactiveConfiguration {
-
     public MicroservicesCommonReactiveConfiguration() {
         log.debug("MicroservicesCommonReactiveConfiguration loaded successfully");
     }
-
     @Bean
     public CommonApplicationInfo commonApplicationInfo() {
         return new CommonApplicationInfo();
